@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<head>
+    <title>Something Special</title>
+    <style type="text/css">
+    body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+	 color:#2f4f4f;
+	 margin-bottom: 10px;
+	 text-align:center;
+}
+.main_nav{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.main_nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2px;
+  margin: 0;
+}
+.main_nav ul li {
+    width: auto;
+    height: 3.125rem;
+	color:white;
+    background: #13a4a4;
+    text-align: center;
+    line-height: 3.125rem;
+    font-family: Arial, Helvetica, sans-serif;
+	margin-right: 1.25rem ;
+	padding: 0.3125rem ;
+    box-sizing: border-box;
+	border-radius: 5px;
+    box-shadow: 3px 3px 3px #eee;;
+    border-right: 1px solid #f5f5f5;
+ 
+}
+.main_nav table{
+	width: auto;
+    align:center;
+}
+.main_nav tr{
+	width: auto;
+	
+}
+.main_nav td a{
+	color:white;
+	background: #13a4a4;
+	text-decoration: none;
+}
+
+.section{
+    width: 100%;
+    height: 30rem;
+    border: 1px solid white;
+}
+
+.section div{
+    width: 100%;
+    height:100%;
+    margin: 0;
+}
+
+.section div:nth-child(2){
+    
+}
+
+.section div:nth-child(3){
+    
+}
+
+.section div:nth-child(4){
+    
+}
+
+.section div:nth-child(5){
+    
+}
+
+.section div:nth-child(6){
+    
+}
+
+.section div:nth-child(7){
+    
+}
+
+.section div:nth-child(8){
+    
+}
+
+.touchOn{
+    background:white;
+    font-size: 20px;font-weight: bold;
+}
+.AiForm{
+	text-align: center;
+	
+}
+.AI_div{
+	padding: 3.125rem;
+}
+.Time{
+	text-align: center;
+}
+#content02 a{
+	color:white;
+	background: #13a4a4;
+	text-decoration: none;
+}
+#content03{
+	margin-top: 8rem;
+	text-align: center;
+}
+.mp3{
+	margin-bottom: -1rem;
+}
+.school_information{
+    background-color: #13a4a4;
+    display: block;
+    box-shadow: 5px,4px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <table align="center">
+            <tr>
+            {% for Month in AllMonth %}
+            {% if Month == thismonth %}
+            <td style="color:white;
+                background: orange;
+                text-decoration: none;"><a href="?month={{Month}}&content={{content}}" style="color:white;text-decoration: none;">{{Month}}</a></td>
+                {% else %}
+            <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="?month={{Month}}&content={{content}}" style="color:white;text-decoration: none;">{{Month}}</a></td>
+       {% endif %}
+       {% endfor %}
+        </tr>
+        </table>
+        <table align="center">
+                <tr>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Monday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Tuesday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Wednesday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Thurday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Friday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Saturday</a></td>
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">Sunday</a></td>
+            </tr>
+            {% for days in calenders %}
+            <tr>
+                {% for day in days %}
+                {% if day ==0 %}
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="#" style="color:white;text-decoration: none;">&emsp;</a></td>
+                {% elif day == thisday %}
+                <td style="color:white;
+                background: orange;
+                text-decoration: none;"><a href="?day={{day}}&month={{thismonth}}&content={{content}}" style="color:white;text-decoration: none;">{{ day }}</a></td>
+                
+                {% else %}
+                <td style="color:white;
+                background: #13a4a4;
+                text-decoration: none;"><a href="?day={{day}}&month={{thismonth}}&content={{content}}" style="color:white;text-decoration: none;">{{ day }}</a></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </table>
+        <h1>距离考研仅剩:<a style="color:white;
+            background: #13a4a4;
+            text-decoration: none;">{{distancepost }}</a></h1>   
+        <h1>距离四六级仅剩:<a style="color:white;
+                background: #13a4a4;
+                text-decoration: none;">{{distanceCET}}</a></h1>
+        <h1>Love/Hate</h1>
+        <nav class="main_nav">
+            <ul>
+                <li id="day01"><a href="?content=content01" style="color:white;text-decoration: none;">Talk</a></li>
+                <li id="day02"><a href="?content=content02" style="color:white;text-decoration: none;">Every Day English</a></li>
+                <li id="day03"><a href="?content=content03" style="color:white;text-decoration: none;">photos_position</a></li>
+                <li id="day04"><a href="?content=content04" style="color:white;text-decoration: none;">The university information</a></li>
+            </ul>
+        </nav>
+    </header>
+	<main class="main">
+            <div class="section">
+            <div id="content01" class="AI_div" >
+                <form method="POST" class="AiForm">
+                Say:<br>
+                <input type="text" name ="words">
+                <br>
+                {% if name %}
+                <h1>AI: {{ name }}</h1>
+                {% else %}
+                <h1>Hello, World!</h1>
+                {% endif %}
+                <br><br>
+                <input type="text" name="content" value="{{content}}" hidden/>
+                <input type="submit" value="Submit">
+                </form> 
+            </div>
+		    <div id="content02"><h2 class="Time">时间:{{sentence["Time"]}}<h2>
+				原文：
+                <audio controls="controls" class="mp3">
+                    <source src="http://www.huzhiwen.com.cn:520/english/{{choicemp3}}" type="audio/ogg">
+                  Your browser does not support the audio element.
+                  </audio>
+                  <p>{{sentence["Sentence"]}}</p>
+                我的第一次翻译：<a id="010">show</a> <a id="011">hidden</a><p id="1">{{sentence["My_First_Translation"]}}</p>
+				生词：<a id="020">show</a> <a id="021">hidden</a><p id="2">{{sentence["New_Words"]}}</p>
+				笔记：<a id="030">show</a> <a id="031">hidden</a><p id="3">{{sentence["Notices"]}}</p>
+				翻译：<a id="040">show</a> <a id="041">hidden</a><p id="4">{{sentence["Translation"]}}</p></div>
+                <div id="content03">
+                    <form method="POST" action="photos" class="photos"  enctype="multipart/form-data">
+                     <input type="file" name="photo"/>
+                     <input type="text" name="content" value="{{content}}" hidden/>
+                     <input type="submit" value="Submit" />
+                     </form>
+                {% if photo_address!="" %}
+                <p>拍摄时间:{{photo_time}}</p>
+                <p>拍摄地点:{{photo_address}}</p>
+                {% endif %}
+                </div>
+                <div id="content04">
+                    <table align="center">
+                               <tr>
+                               {% for position in school_position %}
+                               {% if position == choiceposition %}
+                               <td style="color:white;
+                                   background: orange;
+                                   text-decoration: none;"><a href="?position={{position}}&content={{content}}" style="color:white;text-decoration: none;">{{position}}</a></td>
+                                {% else %}
+                               <td style="color:white;
+                                   background: #13a4a4;
+                                   text-decoration: none;"><a href="?position={{position}}&content={{content}}" style="color:white;text-decoration: none;">{{position}}</a></td>
+                          {% endif %}
+                          {% endfor %}
+                           </tr>
+                          <tr>
+                               {% for Type in school_Type %}
+                               {% if Type == choiceType %}
+                               <td style="color:white;
+                                   background: orange;
+                                   text-decoration: none;"><a href="?position={{choiceposition}}&Type={{Type}}&content={{content}}" style="color:white;text-decoration: none;">{{Type}}</a></td>
+                                {% else %}
+                               <td style="color:white;
+                                   background: #13a4a4;
+                                   text-decoration: none;"><a href="?position={{choiceposition}}&Type={{Type}}&content={{content}}" style="color:white;text-decoration: none;">{{Type}}</a></td>
+                          {% endif %}
+                          {% endfor %}
+                           </tr>
+                           </table>
+                               <ul>
+                                   {% for school in nature %}
+                                   <li class="school_information">
+                                     <p>学校名称:{{school["school_name"]}}</p>
+                                     <p>高校所在地:{{school["school_position"]}}</p>
+                                     <p>院校特色:{{school["school_characteristics"]}}</p>
+                                     <p>高校类型:{{school["school_types"]}}</p>
+                                     <p>高校性质:{{school["school_nature"]}}</p>
+                                     <p><a href="http://{{school["school_network"]}}" style="color:white;
+                                        text-decoration: none;" target="_blank">学校网址:{{school["school_network"]}}</a></p>
+                                    </li>
+                                   {% endfor %}
+                               </ul>
+                 </div>
+            </div>
+	</main>
+</body>
+ <script src='https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js'></script>
+<script>
+$(function(){
+            $(".section").find("div").hide();//先隐藏所有p元素
+            $("#1").hide();
+			$("#2").hide();
+			$("#3").hide();
+            $("#4").hide();
+            $(".section").find("#{{content}}").show();
+        })
+        $("ul li").click(function () {
+            if (!$(this).hasClass("touchOn")) {//$(this)表示所点击的元素，在这里极为好用
+                $(this).addClass("touchOn");//给所点击元素加上touchOn类
+            }
+            $(this).siblings().removeClass("touchOn");//移除其他元素的touchOn类
+            var id = $(this).attr('id');//获取所点击元素的id
+            id = id.slice(4, 5);//获取所点击元素的id的序号，方便与下文p的id对应         
+            var showId = $(".section").find("div").eq((id - 1)).attr('id');//因为index从0开始，这里须id-1
+            showId='#'+showId;
+            $(showId).show();
+            $(showId).siblings().hide();//注意！！！这里不能写$("showId")
+        })
+        $("#content02 a").click(function(){
+			var id = $(this).attr('id')
+			var id1 = id.slice(1,2)
+			var id2 = id.slice(2,3)
+			console.log(id1);
+			console.log(id2);
+			id1 = "#"+id1
+			if(id2==0)
+				{$(id1).show();
+				console.log(id1);}
+			if(id2==1)
+			{    
+				$(id1).hide();
+			console.log(id1);}
+		})
+</script>
+</html>

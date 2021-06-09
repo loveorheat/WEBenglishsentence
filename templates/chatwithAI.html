@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>welcome</title>
+    <style type="text/css">
+        body {text-align:center;
+            position: relative;
+            top: 40%;
+            }
+    </style>
+</head>
+<body background="http://www.tinysy.top:520/static/ai.jpg">
+    <form method="POST">
+        Say:<br>
+        <input type="text" name ="words">
+        <br>
+        {% if name %}
+        <h1>AI: {{ name }}</h1>
+        {% else %}
+        <h1>Hello, World!</h1>
+         {% endif %}
+        <br><br>
+        <input type="submit" value="Submit">
+        </form> 
+</body>
+</html>
