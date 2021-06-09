@@ -6,3 +6,9 @@ if you need some data about the school_information, you can chick this chain htt
 </br>
 ![image](https://user-images.githubusercontent.com/77032377/121294632-4cd38880-c920-11eb-9892-ef5a94365cb3.png)
 </br>
+if you want run this program ,you should add the  flask in your python and some models like lxml ,beautifulsoup,exf..
+</br>
+and then
+  export FLASK_APP=test.py
+  </br>
+  flask run --host=0.0.0.0
