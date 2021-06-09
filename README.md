@@ -9,6 +9,9 @@ if you need some data about the school_information, you can chick this chain htt
 if you want run this program ,you should add the  flask in your python and some models like lxml ,beautifulsoup,exf..
 </br>
 and then
-  export FLASK_APP=test.py
+</br>
+  #$export FLASK_APP=test.py
   </br>
-  flask run --host=0.0.0.0
+  #$flask run --host=0.0.0.0
+  </br>
+ But the english audio is not in your web ,so you need this code to get ths audio
